@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <script type="text/javascript" th:src="@{https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js}"></script>
+    <link th:href="@{https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css}" rel="stylesheet" />
+    <link th:href="@{/css/default.css}" rel="stylesheet" />
+    <link rel="icon" th:href="@{/images/favicon.ico}" type="image/x-icon" />
+    <meta charset="UTF-8" />
+    <title>Coupon Templates</title>
+    <style>
+        .center {
+            text-align: center;
+        }
+
+        table,
+        td,
+        th {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="panel panel-success">
+        <div class="panel-heading">
+            <h2 class="panel-title">Coupon Template Basic Information
+        </div>
+        <table class="table" th:object="${template}">
+            <tr>
+                <td>Name</td>
+                <td th:text="${template.name}"></td>
+            </tr>
+            <tr>
+                <td>Description</td>
+                <td th:text="${template.desc}"></td>
+            </tr>
+            <tr>
+                <td>Template Category</td>
+                <td th:text="${template.category}"></td>
+            </tr>
+            <tr>
+                <td>Product Lines</td>
+                <td th:text="${template.productLine}"></td>
+            </tr>
+            <tr>
+                <td>Expired Rules</td>
+                <td th:text="${template.expiration}"></td>
+            </tr>
+            <tr>
+                <td>Discount Rules</td>
+                <td th:text="${template.discount}"></td>
+            </tr>
+            <tr>
+                <td>Rules of Use</td>
+                <td th:text="${template.usage}"></td>
+            </tr>
+        </table>
+    </div>
+
+    <!--<div style="display:block;margin:0 auto"><a class="btn btn-primary"-->
+    <!--th:href="@{/distribution/thy/acquire(uid=${template.userId},tid=${template.id})}"-->
+    <!--role="button">领取优惠券</a></div>-->
+    <div class="center"><a class="btn btn-primary"
+            th:href="@{/distribution/thy/acquire(uid=${template.userId},tid=${template.id})}" role="button">Get
+            Coupon</a>
+    </div>
+
+</body>
+
+</html>

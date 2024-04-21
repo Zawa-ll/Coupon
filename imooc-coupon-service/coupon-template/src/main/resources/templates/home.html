@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" xmlns:th="http://www.springframework.org/schema/data/jaxb">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Coupon Templates</title>
+
+    <script src="/coupon-template/js/jquery-3.4.1/jquery.min.js"></script>
+    <link href="/coupon-template/css/bootstrap-3.3.7/bootstrap.min.css" rel="stylesheet">
+    <script src="/coupon-template/js/bootstrap-3.3.7/bootstrap.min.js"></script>
+    <link rel="icon" th:href="@{/images/favicon.ico}" type="image/x-icon" />
+
+    <!--<script type="text/javascript" th:src="@{https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js}"></script>-->
+    <!--<link th:href="@{https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css}" rel="stylesheet"/>-->
+    <!--<link th:href="@{/css/default.css}" rel="stylesheet"/>-->
+
+    <style>
+        .center {
+            text-align: center;
+        }
+
+        table,
+        td,
+        th {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2 class="center"> Coupon Templates
+        <div class="center"> <a class="btn btn-primary" href="/coupon-template/template/thy/list" role="button">Coupon
+                Templates</a></div>
+        <h2 class="center"> User Coupons
+            <div class="center">
+                <a class="btn btn-primary" href="http://localhost:7002/coupon-distribution/distribution/thy/users"
+                    role="button">User
+                    Coupons
+                </a>
+            </div>
+
+            <!-- 引入尾部 -->
+            <script language="javascript" type="text/javascript" src="/coupon-template/js/footer.js"></script>
+</body>
+
+</html>

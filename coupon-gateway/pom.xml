@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>coupon</artifactId>
+        <groupId>com.example.coupon</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>coupon-gateway</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>coupon-gateway</name>
+    <description>Spring Cloud Gateway For Coupon</description>
+
+    <dependencies>
+        <!-- 
+            Eureka client, the client to Eureka Server registration will provide a series of metadata information, such as: host, port, health check url and so on.
+            Eureka Server accepts heartbeat messages from each client, if no heartbeat message is received within a configured timeout, the instance will be removed from the registration list.
+        -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+        <!-- Services Gateway -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-zuul</artifactId>
+        </dependency>
+        <!-- apache tools -->
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>1.3.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>16.0</version>
+        </dependency>
+        <!-- Permissions SDK --> -->
+        <dependency>
+            <groupId>com.example.coupon</groupId>
+            <artifactId>coupon-permission-sdk</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
+    <!--
+        Maven plugin for SpringBoot, able to provide SpringBoot support for applications in the form of Maven, which can package the
+        SpringBoot application is packaged as an executable jar or war file, and then run SpringBoot applications in the usual way
+     -->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

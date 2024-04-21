@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <script type="text/javascript" th:src="@{https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js}"></script>
+    <link th:href="@{https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css}" rel="stylesheet" />
+    <link th:href="@{/css/default.css}" rel="stylesheet" />
+    <link rel="icon" th:href="@{/images/favicon.ico}" type="image/x-icon" />
+    <meta charset="UTF-8" />
+    <title>Coupon Templates</title>
+    <style>
+        .center {
+            text-align: center;
+        }
+
+        table,
+        td,
+        th {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="contentDiv">
+
+        <h2 class="center"> Coupon Templates
+
+            <table class="table table-hover table-condensed">
+                <legend>
+                    <strong>List of coupon templates</strong>
+                </legend>
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>Name</th>
+                        <th>Descriptive</th>
+                        <th>Name</th>
+                        <th>ProductLine</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="template : ${templates}">
+                        <th scope="row" th:text="${template.id}"></th>
+                        <td th:text="${template.name}"></td>
+                        <td th:text="${template.desc}"></td>
+                        <td th:text="${template.category}"></td>
+                        <td th:text="${template.productLine}"></td>
+                        <td><a class="btn btn-danger"
+                                th:href="@{/distribution/thy/template/info(uid=${template.userId},id=${template.id})}">Details</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+    </div>
+
+</body>
+
+</html>

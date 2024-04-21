@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <script type="text/javascript" th:src="@{https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js}"></script>
+    <link th:href="@{https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css}" rel="stylesheet" />
+    <link th:href="@{/css/default.css}" rel="stylesheet" />
+    <link rel="icon" th:href="@{/images/favicon.ico}" type="image/x-icon" />
+    <meta charset="UTF-8" />
+    <title>User Coupons</title>
+    <style>
+        .center {
+            text-align: center;
+        }
+
+        table,
+        td,
+        th {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="contentDiv">
+
+        <h2 class="center"> User Coupons
+
+            <table class="table table-hover table-condensed">
+                <legend>
+                    <strong>User Coupon List</strong>
+                </legend>
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>Corresponding templates id</th>
+                        <th>Subscribers Id</th>
+                        <th>Coupon Code</th>
+                        <th>Coupon Code</th>
+                        <th>Coupon Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="coupon : ${coupons}">
+                        <th scope="row" th:text="${coupon.id}"></th>
+                        <td th:text="${coupon.templateId}"></td>
+                        <td th:text="${coupon.userId}"></td>
+                        <td th:text="${coupon.couponCode}"></td>
+                        <td th:text="${coupon.assignTime}"></td>
+                        <td th:text="${coupon.status}"></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="center">
+                <a class="btn btn-primary" th:href="@{/distribution/thy/template/{userId}(userId=${uid})}"
+                    role="button">Coupons that can be claimed</a>
+            </div>
+    </div>
+
+</body>
+
+</html>

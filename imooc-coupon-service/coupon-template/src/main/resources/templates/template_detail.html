@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <script type="text/javascript" th:src="@{https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js}"></script>
+    <link th:href="@{https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css}" rel="stylesheet" />
+    <link th:href="@{/css/default.css}" rel="stylesheet" />
+    <link rel="icon" th:href="@{/images/favicon.ico}" type="image/x-icon" />
+    <meta charset="UTF-8" />
+    <title>Coupon Templates</title>
+    <style>
+        table,
+        td,
+        th {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="panel panel-success">
+        <div class="panel-heading">
+            <h2 class="panel-title">Coupon Template Basic Information
+        </div>
+        <table class="table" th:object="${template}">
+            <tr>
+                <td>id</td>
+                <td th:text="${template.id}"></td>
+            </tr>
+            <tr>
+                <td>Availability Status</td>
+                <td th:text="${template.available}"></td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td th:text="${template.name}"></td>
+            </tr>
+            <tr>
+                <td>Descriptive</td>
+                <td th:text="${template.desc}"></td>
+            </tr>
+            <tr>
+                <td>Template Category</td>
+                <td th:text="${template.category}"></td>
+            </tr>
+            <tr>
+                <td>Product Lines</td>
+                <td th:text="${template.productLine}"></td>
+            </tr>
+            <tr>
+                <td>Total Count</td>
+                <td th:text="${template.count}"></td>
+            </tr>
+            <tr>
+                <td>Creation Time</td>
+                <td th:text="${template.createTime}"></td>
+            </tr>
+            <tr>
+                <td>Create User</td>
+                <td th:text="${template.userId}"></td>
+            </tr>
+            <tr>
+                <td>Template Coding</td>
+                <td th:text="${template.key}"></td>
+            </tr>
+            <tr>
+                <td>Target User</td>
+                <td th:text="${template.target}"></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h2 class="panel-title">Coupon Template Rules Information
+        </div>
+        <table class="table" th:object="${template}">
+            <tr>
+                <td>Expired rules</td>
+                <td th:text="${template.expiration}"></td>
+            </tr>
+            <tr>
+                <td>Discount Rules</td>
+                <td th:text="${template.discount}"></td>
+            </tr>
+            <tr>
+                <td>Limited number of pickups</td>
+                <td th:text="${template.limitation}"></td>
+            </tr>
+            <tr>
+                <td>Rules of Use</td>
+                <td th:text="${template.usage}"></td>
+            </tr>
+            <tr>
+                <td>Weights</td>
+                <td th:text="${template.weight}"></td>
+            </tr>
+        </table>
+    </div>
+
+</body>
+
+</html>
